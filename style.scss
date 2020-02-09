@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 微軟正黑體;
     box-sizing: border-box;
+    color: #fff;
 }
 
 // 橫幅
@@ -35,11 +36,12 @@ nav {
             a {
                 text-decoration: none;
                 color: #fff;
-                padding: 10px;
+                padding: 15px;
+                font-weight: 900;
             }
 
             &:hover {
-                transform: scale(1.1);
+                transform: scale(1.2);
             }
         }
     }
@@ -50,7 +52,7 @@ nav {
         transform: scaleX(-1);
 
         &:hover {
-            transform: scaleX(-1.1) scaleY(1.1);
+            transform: scaleX(-1.2) scaleY(1.2);
         }
     }
 }
