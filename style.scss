@@ -15,29 +15,42 @@
 
 nav {
     display: grid;
-    grid-template-columns: auto 100px auto;
+    grid-template-columns: auto 80px auto;
     text-align: center;
     position: sticky;
     top: 0;
     height: 100px;
     // 使用格線可讓內容垂直對齊
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 
     ul {
         list-style: none;
 
         li {
             display: inline-block;
+            transition: 0.5s;
 
             a {
                 text-decoration: none;
                 color: #fff;
                 padding: 10px;
             }
+
+            &:hover {
+                transform: scale(1.1);
+            }
         }
     }
 
     img {
         width: 80px;
+        transition: 0.5s;
+        transform: scaleX(-1);
+
+        &:hover {
+            transform: scaleX(-1.1) scaleY(1.1);
+        }
     }
 }
