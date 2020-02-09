@@ -6,4 +6,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+#banner {
+  height: 100vh;
+  background-image: url(./img/banner.jpg);
+  background-size: cover;
+}
 /*# sourceMappingURL=style.css.map */
