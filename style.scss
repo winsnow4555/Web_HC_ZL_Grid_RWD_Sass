@@ -1,131 +1,296 @@
+$text-color: #333333;
+$text-hover-color: #937ebf;
+$bg-color: #f8f9fa;
+
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 微軟正黑體;
-    box-sizing: border-box;
-    color: #fff;
+	margin: 0;
+	padding: 0;
+	font-family: 微軟正黑體;
+	box-sizing: border-box;
+	color: #fff;
 }
 
 // 橫幅
 #banner {
-    height: 100vh;
-    background-image: url(./img/banner.jpg);
-    background-size: cover;
-    margin-top: -100px;
-    display: grid;
-    //格線
-    align-items: center;
-    //對齊內容 垂直對齊中間
+	height: 100vh;
+	background-image: url(./img/banner.jpg);
+	background-size: cover;
+	margin-top: -100px;
+	display: grid;
+	//格線
+	align-items: center;
+	//對齊內容 垂直對齊中間
 
-    div {
-        width: 800px;
-        margin: 0 auto;
-        text-align: center;
+	div {
+		width: 800px;
+		margin: 0 auto;
+		text-align: center;
 
-        h1  {
-            font-size: 48px;
-            }
+		h1 {
+			font-size: 48px;
+		}
 
-        h2 {
-            font-size: 18px;
-            padding: 18px;
-        }
-    }
+		h2 {
+			font-size: 18px;
+			padding: 18px;
+		}
+	}
 }
 
 //導覽列
 nav {
-    display: grid;
-    grid-template-columns: auto 80px auto;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    height: 100px;
-    align-items: center;
-    // 使用格線可讓內容垂直對齊
-    max-width: 1200px;
-    margin: 0 auto;
+	display: grid;
+	grid-template-columns: auto 80px auto;
+	text-align: center;
+	position: sticky;
+	top: 0;
+	height: 100px;
+	align-items: center;
+	// 使用格線可讓內容垂直對齊
+	max-width: 1200px;
+	margin: 0 auto;
 
-    ul {
-        list-style: none;
+	ul {
+		list-style: none;
 
-        li {
-            display: inline-block;
-            transition: 0.5s;
+		li {
+			display: inline-block;
+			transition: 0.5s;
 
-            a {
-                text-decoration: none;
-                color: #fff;
-                padding: 15px;
-                font-weight: 900;
-            }
+			a {
+				text-decoration: none;
+				color: #fff;
+				padding: 15px;
+				font-weight: 900;
+			}
 
-            &:hover {
-                transform: scale(1.2);
-            }
-        }
-    }
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
 
-    img {
-        width: 80px;
-        transition: 0.5s;
-        transform: scaleX(-1);
+	img {
+		width: 80px;
+		transition: 0.5s;
+		transform: scaleX(-1);
 
-        &:hover {
-            transform: scaleX(-1.2) scaleY(1.2);
-        }
-    }
+		&:hover {
+			transform: scaleX(-1.2) scaleY(1.2);
+		}
+	}
 }
 
 //文章區域
 .content {
-    min-width: 1200px;
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: 1fr 1fr;
+	max-width: 1000px;
+	display: grid;
+	margin: 0 auto;
+	grid-template-columns: 1fr 1fr;
+	padding: 30px;
 
-    * {
-        color: #333333;
-    }
+	* {
+		color: $text-color;
+	}
 
-    .pic {
-        grid-area: pic;
-        //格線區域名稱 自行命名
-    }
-    .text-area {
-        grid-area: text-area;
-        display: grid;
-        align-items: center;
+	.pic {
+		grid-area: pic;
+		//格線區域名稱 自行命名
+	}
+	.text-area {
+		grid-area: text-area;
+		display: grid;
+		align-items: center;
 
-        h2 {
-            padding: 20px 0;
-        }
+		h2 {
+			padding: 20px 0;
+		}
 
-        p {
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
+		p {
+			line-height: 1.8;
+			margin-bottom: 30px;
+		}
 
-        a {
-            border: 1px solid #333333;
-            text-decoration: none;
-            padding: 10px 30px;
-            border-radius: 30px;
-            transition: 0.8s;
+		a {
+			border: 1px solid $text-color;
+			text-decoration: none;
+			padding: 10px 30px;
+			border-radius: 30px;
+			transition: 0.8s;
 
-            &:hover {
-                background-color: #333333;
-                color: #ffffff;
-            }
-        }
-    }
+			&:hover {
+				background-color: $text-color;
+				color: #ffffff;
+			}
+		}
+	}
 }
 
-#content-1 ,#content-3 {
-    grid-template-areas: 'pic text-area';
-    //設定格線區域 '區域名稱 區域名稱' 依照切割排序
+#content-1,
+#content-3 {
+	grid-template-areas: "pic text-area";
+	//設定格線區域 '區域名稱 區域名稱' 依照切割排序
 }
 
 #content-2 {
-    grid-template-areas: 'pic text-area';
+	grid-template-areas: "text-area pic";
+}
+
+//圖示區域
+#icon {
+	background-color: $bg-color;
+
+	* {
+		color: $text-color;
+	}
+
+	h1 {
+		font-size: 48px;
+		text-align: center;
+		padding: 30px 0 10px;
+	}
+
+	div {
+		max-width: 1000px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		padding: 20px 0;
+
+		div {
+			display: block;
+			text-align: center;
+
+			img {
+				display: block;
+				width: 100px;
+			}
+
+			&:hover img {
+				filter: invert(51%) sepia(45%) saturate(377%) hue-rotate(218deg)
+					brightness(95%) contrast(86%);
+			}
+
+			span {
+				display: block;
+				padding: 14px 0;
+				font-size: 18px;
+			}
+
+			&:hover span {
+				color: $text-hover-color;
+			}
+		}
+	}
+}
+
+//頁尾
+footer {
+	padding: 50px 0;
+	background-color: $text-color;
+	text-align: center;
+
+	img {
+		width: 200px;
+		transform: scaleX(-1);
+	}
+
+	p {
+		font-size: 10px;
+		padding: 20px 0;
+	}
+}
+
+//菜單
+#menu {
+	display: none;
+	//顯示方式 消失
+	padding: 25px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+
+	a.current {
+		background-color: $text-hover-color;
+		display: inline-block;
+		width: 100%;
+		padding: 10px 20px;
+		border-radius: 30px;
+		text-align: center;
+		color: #ffffff !important;
+	}
+
+	//啟動 點選元素
+	&:active #menu-box {
+		right: -950px;
+	}
+
+	&:hover #menu-box {
+		right: -950px;
+	}
+
+	#menu-box {
+		position: absolute;
+		top: 0;
+		right: -1450px;
+		width: 500px;
+		height: 100vh;
+		background-color: #ffffff;
+		transform: 0.5s;
+
+		ul {
+			list-style: none;
+			li {
+				padding: 30px;
+
+				a {
+					color: $text-color;
+					text-decoration: none;
+					font-size: 36px;
+				}
+			}
+		}
+	}
+}
+
+//手機
+@media screen and (max-width: 768px) {
+}
+
+//平板
+@media screen and (min-width: 769px) {
+	nav {
+		grid-template-columns: auto;
+
+		ul {
+			display: none;
+		}
+	}
+
+	#menu {
+		display: block;
+	}
+
+	#content-1 ,#content-2, #content-3 {
+        grid-template-columns: 1fr;
+        grid-template-areas: "pic" "text-area";
+        //"" 一列 "" "" 兩列
+        .pic {
+            text-align: center;
+        }
+        .text-area {
+            padding: 0 200px;
+        }
+    }
+    
+    #icon {
+        div {
+            grid-template-columns: repeat(4, 1fr);
+            padding: 50px;
+        }
+    }
+}
+//電腦
+@media screen and (min-width: 1025px) {
 }
